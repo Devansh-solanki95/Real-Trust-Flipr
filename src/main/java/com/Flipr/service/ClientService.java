@@ -1,6 +1,7 @@
 package com.Flipr.service;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,11 @@ public class ClientService {
 
 	        return clientRepo.save(client);
 	        
+	}
+
+	public List<Clients> getAllClients() {
+		// TODO Auto-generated method stub
+		return clientRepo.findAll();
 	}
 	
 

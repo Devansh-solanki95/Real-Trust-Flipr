@@ -172,7 +172,7 @@ public class AdminController {
     
     private Map<String, Object> convertToResponse(Clients clients) {
         Map<String, Object> map = new LinkedHashMap<>();
-        map.put("projectID", clients.getId());
+        map.put("clientID", clients.getId());
         map.put("name", clients.getName());
         map.put("description", clients.getDescription());
         map.put("designation", clients.getDesignation());

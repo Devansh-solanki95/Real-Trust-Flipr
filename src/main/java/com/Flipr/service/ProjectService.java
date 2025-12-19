@@ -36,4 +36,9 @@ public class ProjectService {
         return projectRepo.save(project);
     }
 
+    // Get all projects with members
+    public List<Projects> getAllProjects() {
+        return projectRepo.findAll();
+    }
+
 }
