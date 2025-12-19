@@ -20,11 +20,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Flipr.Repository.ContactRepository;
+import com.Flipr.Repository.SubscriptionRepository;
 import com.Flipr.config.JwtUtils;
 import com.Flipr.entity.Admin;
 import com.Flipr.entity.Clients;
 import com.Flipr.entity.Contact;
 import com.Flipr.entity.Projects;
+import com.Flipr.entity.Subscription;
 import com.Flipr.model.AdminModel;
 import com.Flipr.model.ApiResponse;
 import com.Flipr.model.ClientModel;
@@ -64,6 +66,9 @@ public class AdminController {
 	
 	@Autowired
 	private ContactRepository contactRepo;
+	
+	@Autowired
+	private SubscriptionRepository subscribeRepo;
 	
     @PostMapping("/saveAdmin")
     public ResponseEntity<ApiResponse> saveAdmin(@RequestBody AdminModel model) {
@@ -187,6 +192,11 @@ public class AdminController {
     @GetMapping("/getAllContacts")
     public List<Contact> getAllContacts(){
         return contactRepo.findAll();
+    }
+    
+    @GetMapping("/getAllSubscriptions")
+    public List<Subscription> getAllSubscriptions(){
+        return subscribeRepo.findAll();
     }
     
     
