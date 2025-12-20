@@ -13,14 +13,14 @@ public class WebCorsConfig implements WebMvcConfigurer {
 
         
         registry.addMapping("/user/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins("http://localhost:3000","https://real-trust-flipr-production-eb44.up.railway.app")
                 .allowedMethods("GET", "POST", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
 
 
         registry.addMapping("/admin/**")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins("http://localhost:3000","https://real-trust-flipr-production-eb44.up.railway.app")
                 .allowedMethods("GET", "POST","DELETE","PUT", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
